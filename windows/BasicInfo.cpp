@@ -9,6 +9,7 @@
 
 void PrintComputerName();
 void PrintComputerFullName();
+void PrintUserName();
 void PrintOSVersion();
 void PrintCPUUsedRatio();
 void PrintMemoryInfo();
@@ -35,6 +36,17 @@ void PrintComputerFullName()
 	GetComputerNameEx(ComputerNameDnsFullyQualified, nullptr, &realLen);
 	name = new(WCHAR[realLen]);
 	GetComputerNameEx(ComputerNameDnsFullyQualified, name, &realLen);
+	wprintf(L"computer full name: %s \n", name);
+}
+
+void PrintUserName()
+{
+	WCHAR* name = nullptr;
+	DWORD realLen = 0;
+	// get suitable space
+	GetUserName(nullptr, &realLen);
+	name = new(WCHAR[realLen]);
+	GetUserName(name, &realLen);
 	wprintf(L"computer full name: %s \n", name);
 }
 
