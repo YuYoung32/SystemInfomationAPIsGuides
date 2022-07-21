@@ -43,14 +43,14 @@ languages: [English documentation](./README_en.md)
 
 #### 电脑名称与全称
 
-**显示结果：**
+显示结果：
 
 ```text
 computer name: DESKTOP-ABCD
 computer full name: aa.bb.DESKTOP-ABCD
 ```
 
-**API文档：**
+API文档：
 
 [GetComputerNameA function (winbase.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcomputernamea)
 
@@ -62,13 +62,13 @@ computer full name: aa.bb.DESKTOP-ABCD
 
 #### 当前系统登陆的用户名
 
-**显示结果：**
+显示结果：
 
 ```
 login user name: Alice
 ```
 
-**API文档：**
+API文档：
 
 [GetUserNameA function (winbase.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getusernamea)
 
@@ -78,7 +78,7 @@ login user name: Alice
 
 #### 系统版本
 
-**显示结果：**
+显示结果：
 
 ```
 OS version: Windows10
@@ -100,7 +100,7 @@ OS version: Windows10
 
 #### CPU利用率
 
-**显示结果：**
+显示结果：
 
 ```text
 CPU utilization: 50.0
@@ -120,14 +120,14 @@ CPU utilization: 50.0
 
 #### 内存使用情况
 
-**显示结果：**
+显示结果：
 
 ```text
 memory total size: 7.8GB
 memory used size: 5.8GB
 ```
 
-**API文档：**
+API文档：
 
 [GlobalMemoryStatusEx function (sysinfoapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex)
 
@@ -137,14 +137,14 @@ memory used size: 5.8GB
 
 #### 系统时间和运行时间
 
-**显示结果：**
+显示结果：
 
 ```text
 system now time: 2022-1-31-15-30
 system has run: 10932s
 ```
 
-**API文档：**
+API文档：
 
 [GlobalMemoryStatusEx function (sysinfoapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex)
 
@@ -158,7 +158,7 @@ system has run: 10932s
 
 #### 网卡IP地址、MAC地址、状态
 
-**显示结果：**
+显示结果：
 
 ```text
 IPv4 address: 192.168.1.30
@@ -178,7 +178,7 @@ status: OK
 
 #### 网卡上传下载速率
 
-**显示结果：**
+显示结果：
 
 ```text
 upload rate: 10.1KB/
@@ -227,14 +227,14 @@ Linux系统不像Windows那样有便捷的、统一的API可以直接拿到数�
 
 #### 电脑名称与全称
 
-**显示结果：**
+显示结果：
 
 ```text
 computer name: Ubuntu
 computer full name: Unbuntu.aa.bb
 ```
 
-**API文档：**
+API文档：
 
 [uname(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/uname.2.html)
 
@@ -244,13 +244,13 @@ computer full name: Unbuntu.aa.bb
 
 #### 当前系统登陆的用户名
 
-**显示结果：**
+显示结果：
 
 ```
 login user name: Alice
 ```
 
-**API文档：**
+API文档：
 
 [getuid(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/geteuid.2.html)
 
@@ -262,7 +262,7 @@ login user name: Alice
 
 #### 系统版本
 
-**显示结果：**
+显示结果：
 
 ```
 OS version: Ubuntu
@@ -280,7 +280,7 @@ OS version: Ubuntu
 
 #### CPU利用率
 
-**显示结果：**
+显示结果：
 
 ```text
 CPU utilization: 50.0
@@ -298,14 +298,14 @@ CPU utilization: 50.0
 
 #### 内存使用情况
 
-**显示结果：**
+显示结果：
 
 ```text
 memory total size: 7.8GB
 memory used size: 7.8GB=
 ```
 
-**API文档：**
+API文档：
 
 [sysinfo(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/sysinfo.2.html)
 
@@ -315,14 +315,14 @@ memory used size: 7.8GB=
 
 #### 系统时间和运行时间
 
-**显示结果：**
+显示结果：
 
 ```text
 system now time: 2022-1-31-15-30
 system has run: 10932s
 ```
 
-**API文档：**
+API文档：
 
 [time(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/time.2.html)
 
@@ -338,7 +338,7 @@ system has run: 10932s
 
 #### 网卡名称、网卡IPv4地址、IPv6地址、状态、网卡上传下载速率
 
-**显示结果：**
+显示结果：
 
 ```text
 NIC name: eth0
@@ -361,7 +361,7 @@ download rate: 16.0KB/s
 
 #### MAC地址
 
-**显示结果：**
+显示结果：
 
 ```text
 MAC address: 1f:2d:3c:4d:5f:6e

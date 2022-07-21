@@ -43,14 +43,14 @@ It is designed to simplify the search process when developers need to get system
 
 #### Computer name and full name
 
-**Display results:**
+Display results:
 
 ```text
 computer name: DESKTOP-ABCD
 computer full name: aa.bb.DESKTOP-ABCD
 ```
 
-**API documentation:**
+API documentation:
 
 [GetComputerNameA function (winbase.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcomputernamea)
 
@@ -62,13 +62,13 @@ computer full name: aa.bb.DESKTOP-ABCD
 
 #### The current system login username
 
-**Display results:**
+Display results:
 
 ```
 login user name: Alice
 ```
 
-**API documentation:**
+API documentation:
 
 [GetUserNameA function (winbase.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getusernamea)
 
@@ -78,7 +78,7 @@ login user name: Alice
 
 #### OS version
 
-**Display results:**
+Display results:
 
 ```
 OS version: Windows10
@@ -100,7 +100,7 @@ So if we want to get more detailed information, you need to get it dynamically t
 
 #### CPU utilization
 
-**Display results:**
+Display results:
 
 ```text
 CPU utilization: 50.0
@@ -120,14 +120,14 @@ We can see in the Performance Monitor, one is `Processor Time` and another is `P
 
 #### Memory use
 
-**Display results:**
+Display results:
 
 ```text
 memory total size: 7.8GB
 memory used size: 5.8GB
 ```
 
-**API documentation:**
+API documentation:
 
 [GlobalMemoryStatusEx function (sysinfoapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex)
 
@@ -137,14 +137,14 @@ memory used size: 5.8GB
 
 #### System time and running time
 
-**Display results:**
+Display results:
 
 ```text
 system now time: 2022-1-31-15-30
 system has run: 10932s
 ```
 
-**API documentation:**
+API documentation:
 
 [GlobalMemoryStatusEx function (sysinfoapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex)
 
@@ -158,7 +158,7 @@ system has run: 10932s
 
 #### NIC IP address, MAC address, status
 
-**Display results:**
+Display results:
 
 ```text
 IPv4 address: 192.168.1.30
@@ -178,7 +178,7 @@ This API returns a chain list that lists information about all network adapters 
 
 #### NIC upload and download rates
 
-**Display results:**
+Display results:
 
 ```text
 upload rate: 10.1KB/
@@ -225,7 +225,7 @@ In summary, method 1 < 2 < 3 < 4 in terms of performance excellence, and 1 > 2 >
 
 #### Computer name and full name
 
-**Display results:**
+Display results:
 
 ```text
 computer name: Ubuntu
@@ -242,7 +242,7 @@ computer full name: Unbuntu.aa.bb
 
 #### The current system login username
 
-**Display results:**
+Display results:
 
 ```
 login user name: Alice
@@ -260,7 +260,7 @@ login user name: Alice
 
 #### OS version
 
-**Display results:**
+Display results:
 
 ```
 OS version: Ubuntu
@@ -278,7 +278,7 @@ The kernel version is obtained here.
 
 #### CPU utilization
 
-**Display results:**
+Display results:
 
 ```text
 CPU utilization: 50.0
@@ -296,7 +296,7 @@ The file path is: /proc/stat
 
 #### Memory use
 
-**Display results:**
+Display results:
 
 ```text
 memory total size: 7.8GB
@@ -313,7 +313,7 @@ memory used size: 7.8GB=
 
 #### System time and running time
 
-**Display results:**
+Display results:
 
 ```text
 system now time: 2022-1-31-15-30
@@ -336,7 +336,7 @@ system has run: 10932s
 
 #### NIC IPv4 address, IPv6 address, status, upload and download rates
 
-**Display results:**
+Display results:
 
 ```text
 NIC name: eth0
@@ -359,7 +359,7 @@ This API returns a chain list that contains information about all network adapte
 
 #### NIC MAC address
 
-**Display results:**
+Display results:
 
 ```text
 MAC address: 1f:2d:3c:4d:5f:6e
