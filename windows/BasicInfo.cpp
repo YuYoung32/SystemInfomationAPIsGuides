@@ -47,7 +47,7 @@ void PrintUserName()
 	GetUserName(nullptr, &realLen);
 	name = new(WCHAR[realLen]);
 	GetUserName(name, &realLen);
-	wprintf(L"computer full name: %s \n", name);
+	wprintf(L"login user name: %s \n", name);
 }
 
 void PrintOSVersion()
