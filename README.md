@@ -6,7 +6,7 @@ languages: [English documentation](./README_en.md)
 
 ---
 
-
+**目录**
 
 - [SystemInfomationAPIsGuides](#systeminfomationapisguides)
   - [Windows](#windows)
@@ -20,6 +20,8 @@ languages: [English documentation](./README_en.md)
     - [网络适配器信息](#%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8%E4%BF%A1%E6%81%AF)
       - [网卡IP地址、MAC地址、状态](#%E7%BD%91%E5%8D%A1ip%E5%9C%B0%E5%9D%80mac%E5%9C%B0%E5%9D%80%E7%8A%B6%E6%80%81)
       - [网卡上传下载速率](#%E7%BD%91%E5%8D%A1%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E9%80%9F%E7%8E%87)
+    - [硬盘信息](#%E7%A1%AC%E7%9B%98%E4%BF%A1%E6%81%AF)
+      - [硬盘名称、总空间、剩余空间](#%E7%A1%AC%E7%9B%98%E5%90%8D%E7%A7%B0%E6%80%BB%E7%A9%BA%E9%97%B4%E5%89%A9%E4%BD%99%E7%A9%BA%E9%97%B4)
   - [Linux](#linux)
     - [前言](#%E5%89%8D%E8%A8%80)
     - [系统基本信息](#%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-1)
@@ -32,10 +34,10 @@ languages: [English documentation](./README_en.md)
     - [网络适配器信息](#%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8%E4%BF%A1%E6%81%AF-1)
       - [网卡名称、网卡IPv4地址、IPv6地址、状态、网卡上传下载速率](#%E7%BD%91%E5%8D%A1%E5%90%8D%E7%A7%B0%E7%BD%91%E5%8D%A1ipv4%E5%9C%B0%E5%9D%80ipv6%E5%9C%B0%E5%9D%80%E7%8A%B6%E6%80%81%E7%BD%91%E5%8D%A1%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E9%80%9F%E7%8E%87)
       - [MAC地址](#mac%E5%9C%B0%E5%9D%80)
+    - [硬盘信息](#%E7%A1%AC%E7%9B%98%E4%BF%A1%E6%81%AF-1)
+      - [硬盘名称、挂载路径、总空间、剩余空间](#%E7%A1%AC%E7%9B%98%E5%90%8D%E7%A7%B0%E6%8C%82%E8%BD%BD%E8%B7%AF%E5%BE%84%E6%80%BB%E7%A9%BA%E9%97%B4%E5%89%A9%E4%BD%99%E7%A9%BA%E9%97%B4)
 
 ---
-
-
 
 ## Windows
 

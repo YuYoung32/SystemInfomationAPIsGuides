@@ -20,6 +20,8 @@ It is designed to simplify the search process when developers need to get system
     - [Network adapter information](#network-adapter-information)
       - [NIC IP address, MAC address, status](#nic-ip-address-mac-address-status)
       - [NIC upload and download rates](#nic-upload-and-download-rates)
+    - [Hard drive information](#hard-drive-information)
+      - [Hard drive name, total space, remaining space](#hard-drive-name-total-space-remaining-space)
   - [Linux](#linux)
     - [Preface](#preface)
     - [System basic information](#system-basic-information-1)
@@ -32,10 +34,10 @@ It is designed to simplify the search process when developers need to get system
     - [Network adapter information](#network-adapter-information-1)
       - [NIC IPv4 address, IPv6 address, status, upload and download rates](#nic-ipv4-address-ipv6-address-status-upload-and-download-rates)
       - [NIC MAC address](#nic-mac-address)
+    - [Hard drive information](#hard-drive-information-1)
+      - [Hard drive name, mount path, total space, remaining space](#hard-drive-name-mount-path-total-space-remaining-space)
 
 ---
-
-
 
 ## Windows
 
