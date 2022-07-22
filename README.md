@@ -84,7 +84,7 @@ API文档：
 OS version: Windows10
 ```
 
-**注意：**
+注意：
 
 版本信息在`VersionHelpers.h`里通过类似`IsWindows10OrGreater()`和`IsWindowsServer()`来获取，但是这个API目的是为了测试软件的兼容性而不是获取版本，Windows8及以上依赖于`manifest list`，若没有此文件，此API只会得到系统版本是Windows8的结果。
 
@@ -106,7 +106,7 @@ OS version: Windows10
 CPU utilization: 50.0
 ```
 
-**注意：**
+注意：
 
 一种常规的思路是根据CPU运行的空闲时间和忙碌时间来算出使用率，在Linux上确实是这么算的。但是Windows上若要和任务管理器里显示的值对比，发现此计算的值会小一些。原因是“利用率”的定义问题，任务管理器中利用率实际上是结合了CPU当前频率算出来的，而不是简单的根据CPU时间计算。幸运的是我们不需要知道算法，在性能监视器里可以直接拿到这个值。
 
@@ -166,7 +166,7 @@ MAC address: 1f:2d:3c:4d:5f:6e
 status: OK
 ```
 
-**注意：**
+注意：
 
 此API会返回一个链表，该链表会列出所有网络适配器包括虚拟网络适配器（如虚拟机、回环地址）的信息，包括IP地址和MAC地址，IP地址可能会有多个，应注意遍历全部。此外，IPv4和IPv6的传入FLAG不同，返回的是不同的链表。
 
@@ -185,11 +185,33 @@ upload rate: 10.1KB/
 download rate: 16.0KB/s
 ```
 
-**注意：**
+注意：
 
 `GetAdaptersAddresses`API返回的链表的节点中有`Speed`字段，但此字段是指网卡的最大速率。要想获得传输速率需要读取电脑全部的物理接口，获得累积的流量信息，自行计算。此`GetIfTable`API会返回所有物理接口，因此需要根据MAC地址筛选网卡的接口。
 
 [GetIfTable function (iphlpapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-getiftable)
+
+
+
+
+
+### 硬盘信息
+
+#### 硬盘名称、总空间、剩余空间
+
+显示结果：
+
+```text
+disk name: C:/, total space: 503.13GB, free space: 345.23GB
+```
+
+API文档：
+
+[GetLogicalDriveStringsW function (fileapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getlogicaldrivestringsw)
+
+[GetDiskFreeSpaceExA function (fileapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getdiskfreespaceexa)
+
+---
 
 
 
@@ -268,7 +290,7 @@ API文档：
 OS version: Ubuntu
 ```
 
-**注意：**
+注意：
 
 这里获取到的是内核版本。
 
@@ -286,7 +308,7 @@ OS version: Ubuntu
 CPU utilization: 50.0
 ```
 
-**注意：**
+注意：
 
 根据CPU运行的空闲时间和忙碌时间来算出使用率，这里需要从`/proc`文件系统里读取CPU统计数据进行计算。
 
@@ -349,7 +371,7 @@ upload rate: 10.1KB/s
 download rate: 16.0KB/s
 ```
 
-**注意：**
+注意：
 
 此API会返回一个链表，该链表会列出所有网络适配器包括虚拟网络适配器（如虚拟机、回环地址）的信息，包括名称、IPv4地址、IPv6地址、传输字节数。但是这里每个网卡的每一项都是单独的一个链表节点，同一个网卡的链表节点具有相同的名字，但根据FLAG的不同而存储不同项。因此需要遍历全部才能收集齐一个网卡的信息。
 
@@ -367,9 +389,29 @@ download rate: 16.0KB/s
 MAC address: 1f:2d:3c:4d:5f:6e
 ```
 
-**注意：**
+注意：
 
 使用`ioctl`来获取接口的硬件地址，需要实现创建socket，通过该socket和网卡名称来获取MAC地址。
 
 [ioctl(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/ioctl.2.html)
+
+
+
+
+
+### 硬盘信息
+
+#### 硬盘名称、挂载路径、总空间、剩余空间
+
+显示结果：
+
+```text
+disk name: dev/sda2, mount path: /, total space: 503.13GB, free space: 345.23GB
+```
+
+注意：
+
+本结果通过读取/proc/mounts拿到所有磁盘的名称和挂载路径，再通过`statfs`查询挂载路径的空间。
+
+[statfs(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/statfs.2.html)
 

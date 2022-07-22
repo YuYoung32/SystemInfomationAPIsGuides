@@ -10,7 +10,7 @@ It is designed to simplify the search process when developers need to get system
 
 - [SystemInfomationAPIsGuides](#systeminfomationapisguides)
   - [Windows](#windows)
-    - [System Basic Information](#system-basic-information)
+    - [System basic information](#system-basic-information)
       - [Computer name and full name](#computer-name-and-full-name)
       - [The current system login username](#the-current-system-login-username)
       - [OS version](#os-version)
@@ -22,7 +22,7 @@ It is designed to simplify the search process when developers need to get system
       - [NIC upload and download rates](#nic-upload-and-download-rates)
   - [Linux](#linux)
     - [Preface](#preface)
-    - [System Basic Information](#system-basic-information-1)
+    - [System basic information](#system-basic-information-1)
       - [Computer name and full name](#computer-name-and-full-name-1)
       - [The current system login username](#the-current-system-login-username-1)
       - [OS version](#os-version-1)
@@ -39,7 +39,7 @@ It is designed to simplify the search process when developers need to get system
 
 ## Windows
 
-### System Basic Information
+### System basic information
 
 #### Computer name and full name
 
@@ -84,7 +84,7 @@ Display results:
 OS version: Windows10
 ```
 
-**Notes:**
+Notes:
 
 Version information is obtained in `VersionHelpers.h` by similar `IsWindows10OrGreater()` and `IsWindowsServer()`, but the purpose of this API is to test the compatibility of the software rather than to obtain the version, Windows8 and above depend on the manifest list. If this file is not exist, this API will only get the result that the system version is Windows 8.
 
@@ -106,7 +106,7 @@ Display results:
 CPU utilization: 50.0
 ```
 
-**Notes:**
+Notes:
 
 One conventional idea is to calculate the usage based on the idle time and busy time when the CPU running, which is indeed the case on Linux. But on Windows, if you compare it with the value shown in Task Manager, you will find that the calculated value is smaller. The reason for this is the definition of "utilization", which in Task Manager is actually calculated by combining the current CPU frequency, not simply by CPU time. Fortunately, we don't need to know the algorithm, we can get this value directly in the `Performance Counter`.
 
@@ -166,7 +166,7 @@ MAC address: 1f:2d:3c:4d:5f:6e
 status: OK
 ```
 
-**Notes:**
+Notes:
 
 This API returns a chain list that lists information about all network adapters including virtual network adapters (e.g. virtual machines, loopback addresses), including IP addresses and MAC addresses, there may be more than one IP address and care should be taken to traverse them all. In addition, IPv4 and IPv6 have different incoming FLAGs and return different chained tables.
 
@@ -185,13 +185,37 @@ upload rate: 10.1KB/
 download rate: 16.0KB/s
 ```
 
-**Notes:**
+Notes:
 
 The node of the chain list returned by `GetAdaptersAddresses` API has a Speed field, but this field refers to the maximum rate of the network card. To get the transfer rate you need to read all the physical interfaces of your computer, get the accumulated traffic information and calculate it by yourself. This 	`GetIfTable`  API returns all physical interfaces, so you need to filter the interface of the NIC according to the MAC address.
 
 [GetIfTable function (iphlpapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-getiftable)
 
+
+
+
+
+### Hard drive information
+
+#### Hard drive name, total space, remaining space
+
+Display results:
+
+```text
+disk name: C:/, total space: 503.13GB, free space: 345.23GB
+```
+
+API documentation:
+
+[GetLogicalDriveStringsW function (fileapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getlogicaldrivestringsw)
+
+[GetDiskFreeSpaceExA function (fileapi.h) - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getdiskfreespaceexa)
+
 ---
+
+
+
+
 
 ## Linux
 
@@ -221,7 +245,7 @@ Linux systems do not have a convenient and unified API to get the data directly 
 
 In summary, method 1 < 2 < 3 < 4 in terms of performance excellence, and 1 > 2 > 3 > 4 in terms of ease of access to information. This guides mainly uses method 2 and method 3, i.e., reading the /proc file system and the user API.
 
-### System Basic Information
+### System basic information
 
 #### Computer name and full name
 
@@ -266,7 +290,7 @@ Display results:
 OS version: Ubuntu
 ```
 
-**Notes:**
+Notes:
 
 The kernel version is obtained here.
 
@@ -284,7 +308,7 @@ Display results:
 CPU utilization: 50.0
 ```
 
-**Notes:**
+Notes:
 
 The utilization is calculated based on the idle time and busy time of CPU operation, where CPU statistics are read from the `/proc` file system for calculation.
 
@@ -347,7 +371,7 @@ upload rate: 10.1KB/s
 download rate: 16.0KB/s
 ```
 
-**Notes:**
+Notes:
 
 This API returns a chain list that contains information about all network adapters including virtual network adapters (e.g. virtual machines, loopback addresses), including name, IPv4 address, IPv6 address, number of bytes transferred. But here each item of each NIC is a separate chain table node, and the chain list node of the same NIC has the same name, but stores different items depending on the FLAG. Therefore, it is required to traverse the list to collect all the information of a NIC.
 
@@ -365,11 +389,29 @@ Display results:
 MAC address: 1f:2d:3c:4d:5f:6e
 ```
 
-**Notes:**
+Notes:
 
 To use `ioctl` to get the hardware address of the interface, we need to implement the creation of a socket and get the MAC address by that socket and the name of the NIC.
 
 [ioctl(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/ioctl.2.html)
 
 
+
+
+
+### Hard drive information
+
+#### Hard drive name, mount path, total space, remaining space
+
+Display results:
+
+```text
+disk name: dev/sda2, mount path: /, total space: 503.13GB, free space: 345.23GB
+```
+
+Notes:
+
+This result gets the name and mount path of all disks by reading `/proc/mounts`, and then query the space of the mount path through `statfs`.
+
+[statfs(2) - Linux manual page (man7.org)](https://man7.org/linux/man-pages/man2/statfs.2.html)
 
